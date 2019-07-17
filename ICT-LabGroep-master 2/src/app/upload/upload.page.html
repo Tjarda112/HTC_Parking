@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="danger">
+  <ion-buttons>
+  <ion-menu-button></ion-menu-button>
+
+  <ion-title>Producten</ion-title>
+ 
+  </ion-buttons>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-list>
+<ion-searchbar showcancelbutton="" (ionInput)="search($event)"></ion-searchbar>
+
+    <ion-item-sliding *ngFor="let item of todos">
+      <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+        <ion-label text-wrap>
+          {{ item.description | uppercase}}
+          <p>ProductId: {{ item.productId }}<p>
+          <p>Specification: {{ item.specification }}<p>
+          <p>Stock: {{ item.stock }}<p>
+          <p>Levertijd: {{ item.levertijd }}<p>
+          <p>{{ item.createdAt | date:'short' }}</p>
+        </ion-label>
+        <ion-note slot="end" color="primary">€{{ item.price }}</ion-note>
+      </ion-item>
+ 
+      <ion-item-options side="end">
+        <ion-item-option (click)="remove(item)" color="danger">
+          Delete
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list>
+ 
+  <ion-fab color="danger" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ 
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+      <ion-title >HTC Parking</ion-title>
+
+
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="assets/images/logo-htc.png"/>
+  <br>
+  <br>
+  <p><strong>HTC Parking & Security B.V</strong></p>
+  <ion-list>
+    <ion-item>
+      <ion-label>Select Language</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="selectedLanguage" (ionChange)="languageChanged()">
+        <ion-select-option value="en">English</ion-select-option>
+        <ion-select-option value="nl">Dutch</ion-select-option>
+        <ion-select-option value="fr">French</ion-select-option>
+        <ion-select-option value="de">German</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  {{ 'HOME.text' | translate:params }}
+  <br>
+
+</ion-content>

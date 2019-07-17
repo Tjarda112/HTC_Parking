@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Product Toevoegen</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Description" [(ngModel)]="todo.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="number" placeholder="Price" [(ngModel)]="todo.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="number" placeholder="ProductId" [(ngModel)]="todo.productId"></ion-input>
+    </ion-item>
+     <ion-item>
+      <ion-input required type="text" placeholder="Specification" [(ngModel)]="todo.specification"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Stock" [(ngModel)]="todo.stock"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="number" placeholder="Levertijd" [(ngModel)]="todo.levertijd"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="danger" expand="full" (click)="saveTodo()">Save</ion-button>
+</ion-content>
